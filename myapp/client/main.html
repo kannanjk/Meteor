@@ -1,0 +1,23 @@
+<head>
+  <title>Meteor App</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> task}}
+</body>
+
+<template name="task">
+  <form class="add-task">
+    <label for="">Task name</label>
+    <input type="text" name="name" placeholder="Enter name...">
+    <input type="submit" name="submit">
+  </form>
+  <hr>
+  <ul>
+    {{#each task}}
+    <li>{{name}} </li>
+    {{/each}}
+  </ul>
+</template>
