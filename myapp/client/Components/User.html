@@ -1,0 +1,35 @@
+<head>
+    <title>user account</title>
+</head>
+
+<body>
+    {{#if currentUser}}
+    {{> home}}
+    {{else}}
+    {{> register}}
+    {{> loging}}
+    {{/if}}
+</body>
+
+<template name="register">
+    <h2>Register</h2>
+    <form>
+        <input type="email" name="email"><br>
+        <input type = "password" name = "password"><br>
+        <input type = "submit" value = "Register"><br>
+    </form>
+</template>
+
+<template name = "login">
+    <h2>LOGIN:</h2>
+    <form>
+       <input type = "email" name = "loginEmail"><br>
+       <input type = "password" name="loginPassword"><br>
+       <input type = "submit" value = "Login"><br>
+    </form>
+ </template>
+
+ <template name = "home">
+    <p>You're logged in.</p>
+    <button class = "logout">Logout</button>
+ </template>
