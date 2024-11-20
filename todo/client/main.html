@@ -1,0 +1,47 @@
+<head>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <!-- Add Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <title>Meteor App</title>
+</head>
+
+<body>
+
+  <nav class="red">
+    <div class="container">
+      <div class="nav-wraper">
+        <a href="" class="brand-logo">Note manager</a>
+        <ul id="nav-mobile" class="right right hide-on-med-and-down">
+          <li class="nav-item">
+            <a href="#addModal" class="waves-efect waves-light btn">Add notes</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Latest notes</h1>
+    <ul class="collections">
+      {{#each notes}}
+      {{> note}}
+      {{/each}}
+    </ul>
+  </div>
+  {{> add}}
+</body>
+
+<template name="note">
+  <li class="collection-item">{{text}} </li>
+</template>
+
+<template name="add">
+  <div class="modal-content">
+    <h4>Add notes</h4>
+    <form class="add-form">
+      <input type="text" name="text" placeholder="Enter some text....">
+    </form>
+  </div>
+</template>

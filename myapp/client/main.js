@@ -1,7 +1,7 @@
 // import './main.html';
 // import './Sessions.html';
 // import './Components/Tracker.html';
-import './Components/User.html';
+// import './Components/User.html';
 // import { Task } from '../lib/colloctions';
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
@@ -10,8 +10,38 @@ import { Meteor } from 'meteor/meteor';
 // import { check } from 'meteor/check'
 // import { EJSON } from 'meteor/ejson'
 // import {HTTP} from 'meteor/http'
-import { Email } from 'meteor/email'
-import { Accounts } from 'meteor/accounts-base';
+// import { Email } from 'meteor/email'
+// import { Accounts } from 'meteor/accounts-base';
+// import { Mongo } from 'meteor/mongo'
+// var PlayersCollection = new Mongo.Collection('playersCollection');
+// const PlayersCollection=[
+//   {
+//     name:'jishnu'
+//   },
+//   {
+//     name:'kannan'
+//   },
+//   {
+//     name:'manu'
+//   }
+// ]
+if (Meteor.isServer) {
+  //   Meteor.methods({
+
+  //     method1: function (arg) {
+  //        var result = arg + 5;
+  //        return result;
+  //     },
+
+  //     method2: function (arg) {
+  //        var result = arg + 10;
+  //        return result;
+  //     }
+  //  });
+//   Meteor.publish('allowedData', function() {
+//     return PlayersCollection.find();
+//  })
+}
 
 if (Meteor.isClient) {
   // Template.task.helpers({
@@ -125,21 +155,70 @@ if (Meteor.isClient) {
   //     email: 'eee@example.com',
   //     joined: new Date(2016, 2, 23)
   //  });
-  Template.register.events({
-    'submit form': (event) => {
-      event.preventDefault();
+  // Template.register.events({
+  //   'submit form': (event) => {
+  //     event.preventDefault();
 
-      var registerData = {
-        email: event.target.email.value,
-        password: event.target.password.value
-      }
-      Accounts.createUser(registerData, (err) => {
-        if (Meteor.user()) {
-          console.log(Meteor.userId());
-        } else {
-          console.log(`Error` + err.reason);
-        }
-      })
-    }
-  })
+  //     var registerData = {
+  //       email: event.target.email.value,
+  //       password: event.target.password.value
+  //     }
+  //     Accounts.createUser(registerData, (err) => {
+  //       if (Meteor.user()) {
+  //         console.log(Meteor);
+  //       } else {
+  //         console.log(`Error` + err.reason);
+  //       }
+  //     })
+  //   }
+  // })
+  // Template.login.events({
+  //   'submit form': function (event) {
+  //     event.preventDefault();
+  //     var myEmail = event.target.email.value;
+  //     var myPassword = event.target.password.value;
+
+  //     Meteor.loginWithPassword(myEmail, myPassword, function (error) {
+
+  //       if (Meteor.user()) {
+  //         console.log(Meteor);
+  //       } else {
+  //         console.log("ERROR: " + error.reason);
+  //       }
+  //     });
+  //   }
+  // });
+  // Template.home.events({
+  //   'click .logout': (event) => {
+  //     event.preventDefault()
+  //     Meteor.logout((err,res) => {
+  //       console.log('Err' + err.reason);
+  //     })
+  //   }
+  // })
+  // var aaa = 'aaa'
+  // Meteor.call('method1', aaa, function (error, result) {
+
+  //    if (error) {
+  //       console.log(error);
+  //     } else {
+  //          console.log('Method 1 result is: ' + result);
+  //       }
+  //    }
+  // );
+
+  // Meteor.call('method2', 5, function (error, result) {
+
+  //    if (error) {
+  //       console.log(error);
+  //    } else {
+  //       console.log('Method 2 result is: ' + result);
+  //    }
+  // });
+  // Meteor.subscribe('allowedData');
 }
+
+// Meteor.setTimeout(function() {
+//   var myLog = PlayersCollection.find().fetch();
+//   console.log(myLog);
+// }, 1000);
